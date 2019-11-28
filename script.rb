@@ -1,7 +1,7 @@
 module Enumerable
   def my_each
     i = 0
-    self.length.times do
+    length.times do
       yield(self[i])
       i += 1
     end
