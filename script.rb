@@ -1,59 +1,59 @@
 module Enumerable
   def my_each
-    i= 0
+    i = 0
     self.length.times do
       yield(self[i])
-      i+= 1
+      i += 1
     end
   end
   def my_each_with_index
-    i= 0
+    i = 0
     self.length.times do
       yield(self[i], i)
-      i+= 1
+      i += 1
     end
   end
   def my_select
-    i= 0
+    i = 0
     res_arr=[]
     self.length.times do
       res_arr << self[i] if yield(self[i]) == true
-      i+= 1
+      i += 1
     end
     return res_arr
   end
   def my_all?
-    i= 0
+    i = 0
     self.length.times do
       return false if yield(self[i]) == false
-      i+= 1
+      i += 1
     end
     return true
   end
   def my_none?
-    i= 0
+    i = 0
     self.length.times do
       return false if yield(self[i]) == true
-      i+= 1
+      i += 1
     end
     return true
   end
   def my_count
-    i= 0
+    i = 0
     c=0
     self.length.times do
       c+=1 if yield(self[i]) == true
-      i+= 1
+      i += 1
     end
     return c
   end
   def my_map
-    i= 0
+    i = 0
     res_Array=[]
     self.length.times do
       res_Array << yield(self[i]) if block_given?
       res_Array <<  proc.call(self[i])
-      i+= 1
+      i += 1
     end
     return res_Array
   end
